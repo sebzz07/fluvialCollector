@@ -31,8 +31,9 @@ class AppFixtures extends Fixture
 
         for ($i = 226; $i <= 319; $i++) {
             $magazine = new Magazine();
-            $magazine->setNumber($i);
-            $magazine->setFile("pdf/fluvial".$i.".pdf");
+            $magazine->setNumber($i)
+            ->setFile("pdf/fluvial".$i.".pdf")
+            ->setCover("img/cover/".$i.".jpg");
             $manager->persist($magazine);
         }
 

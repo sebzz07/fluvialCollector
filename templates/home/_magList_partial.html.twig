@@ -1,0 +1,20 @@
+{% for magazine in magazines %}
+    <div class="m-3">
+        <div class="card h-100 shadow p-2 bg-white rounded-lg" style="width: 208px;">
+
+            <!--Cover Magazine -->
+            <a href="{{ asset(magazine.file) }}">
+                    <img class="card-img-top" style="height: 206px; object-fit: contain;"
+                         src="{{ asset(magazine.cover) }}"
+                         alt="Fluvial N°{{ magazine.number }}"/>
+            </a>
+            <!-- Trick details-->
+            <a class="card-link" href="{{ asset(magazine.file) }}">
+                <div class="card-body p-0 align-self-center text-center" style="width:190px;">
+                    <h5 class="my-3 card-link fw-bolder">Fluvial N°{{ magazine.number }}</h5>
+                </div>
+            </a>
+        </div>
+
+    </div>
+{% endfor %}

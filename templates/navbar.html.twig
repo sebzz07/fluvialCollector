@@ -1,19 +1,50 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="{{ path('app_home') }}"><img src="{{ asset('img/fluvialnet_logo.png') }}" alt="Fluvialnet"
+<nav class="navbar navbar-expand-lg navbar-light bg-blue">
+    <div class="container">
+        <a class="navbar-brand" href="{{ path('app_home') }}"><img width="150" height="51" src="{{ asset('img/cropped-fluvialnet_logo.png') }}" alt="Fluvialnet"
                                                                    class="d-inline-block align-top"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item navbar-title"><a class="nav-link" href="#">Accueil</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Magazine
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Présentation</a></li>
+                        <li><a class="dropdown-item" href="#">Rechercher un article</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item navbar-title"><a class="nav-link" href="#">Actualités</a></li>
+                <li class="nav-item navbar-title"><a class="nav-link" href="#">Petites annonces</a></li>
+                <li class="nav-item navbar-title"><a class="nav-link" href="#">Appels d’offres</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        En pratique
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Adresses & sites utiles</a></li>
+                        <li><a class="dropdown-item" href="#">Réglementation</a></li>
+                        <li><a class="dropdown-item" href="#">Vocabulaire de la batellerie</a></li>
+                    </ul>
+                <li class="nav-item navbar-title"><a class="nav-link" href="#">Fluviacarte</a></li>
+                </li>
 
-                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                    <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a></li>
-                {% else %}
-                    <li class="nav-item"><a class="nav-link" href="{{ path('app_login') }}">Se connecter</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a></li>
-                {% endif %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                        <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                        {% else %}
+                        <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a></li>
+                        <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_register') }}">S'inscrire</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

@@ -20,6 +20,9 @@ class Magazine
     #[ORM\Column(length: 255)]
     private ?string $file = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $cover = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -45,6 +48,18 @@ class Magazine
     public function setFile(string $file): static
     {
         $this->file = $file;
+
+        return $this;
+    }
+
+    public function getCover(): ?string
+    {
+        return $this->cover;
+    }
+
+    public function setCover(string $cover): static
+    {
+        $this->cover = $cover;
 
         return $this;
     }
