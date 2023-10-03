@@ -16,30 +16,44 @@
     background-color: var(--main-blue-color) !important;
 }
 
-.navbar-title::after {
-    position: absolute;
-    content: "";
-    margin: 0 auto;
-    width: 0;
-    height: 2px;
-    transition: all .3s ease;
-    right: 0;
-    left: 0;
-    pointer-events: none;
-    background-color: var(--hovercolor)
-
-}
-
 .nav-link, .dropdown-item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
     color: var(--bs-white) !important;
     font-size: 17px !important;
     line-height: 1.6em !important;
     font-weight: 600 !important;
 }
 
+.nav-item {
+    display: block !important;
+    position: relative !important;
+}
+
 .nav-link:hover, .dropdown-item:hover {
     color: var(--hovercolor) !important;
     background-color: inherit !important;
+}
+
+.nav-underline::after {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    content: "";
+    bottom: 10px;
+    width: 0;
+    height: 1px;
+    transition: all .3s ease;
+    pointer-events: none;
+    background-color: var(--hovercolor)
+
+}
+.nav-underline:hover::after {
+    width: 90%;
+    left: 5%;
 }
 
 .dropdown-menu {
