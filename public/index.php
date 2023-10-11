@@ -1,6 +1,4 @@
 <?php
-echo "hello world";
-exit;
 
 use App\Kernel;
 
