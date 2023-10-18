@@ -6,4 +6,5 @@ controllers:
 
 app_logout:
     path: /logout
+    controller: App\Controller\LoginController::index
     methods: GET
