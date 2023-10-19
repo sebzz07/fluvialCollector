@@ -68,11 +68,15 @@
     text-decoration: none !important;
 
 }
+.card {
+    transition: transform .1s;
+}
 
 .card:hover {
     color: var(--hovercolor) !important;
     text-decoration: none !important;
     background-color: var(--hovercolor);
-    opacity: 0.5;
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5);
 
 }
