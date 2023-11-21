@@ -1,47 +1,99 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+<div class="container d-flex justify-content-around">
+    <a class="navbar-brand" href="{{ asset('/') }}"><img width="120" height="80"
+                                                         src="{{ asset('compte/assets/cropped-fluvialnet_logo.png') }}"
+                                                         alt="Fluvialnet"
+                                                         class="d-inline-block align-top"/>
+    </a>
+    <form class="form-inline my-2 my-lg-0">
+        <div class="input-group">
+            <input class="form-control mr-sm-2" type="search" placeholder="Recherchez..." aria-label="Search">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">🔎</button>
+            </div>
+        </div>
+    </form>
+    <div  class="d-flex justify-content-around" style="width: 200px;">
+        <a href="{{ asset('/') }}"><img width="40" height="40"
+                                        src="{{ asset('compte/assets/cart800.png') }}"
+                                        alt="Fluvialnet"
+                                        class="d-inline-block align-top"/>
+        </a>
+        <a href="{{ asset('/') }}"><img width="40" height="40"
+                                        src="{{ asset('compte/assets/doc700.png') }}"
+                                        alt="Fluvialnet"
+                                        class="d-inline-block align-top"/>
+        </a>
+        <a href="{{ asset('/') }}"><img width="40" height="40"
+                                        src="{{ asset('compte/assets/boat800.png') }}"
+                                        alt="Fluvialnet"
+                                        class="d-inline-block align-top"/>
+        </a>
+    </div>
+
+
+</div>
+</nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-blue">
-    <div class="container">
-        <a class="navbar-brand" href="{{ asset('/') }}"><img width="150" height="51" src="{{ asset('compte/img/cropped-fluvialnet_logo.png') }}" alt="Fluvialnet"
-                                                                   class="d-inline-block align-top"/></a>
+    <div class="container justify-content-end">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item navbar-title nav-underline"><a class="nav-link" href="#">Accueil</a></li>
-                <li class="nav-item dropdown nav-underline">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Magazine
+                <li class="nav-item dropdown nav-underline px-3 px-lg-5">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Le mag
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Présentation</a></li>
-                        <li><a class="dropdown-item" href="#">Rechercher un article</a></li>
+                        <li><a class="dropdown-item" href="#">Sondage</a></li>
+                        <li><a class="dropdown-item" href="#">Les archives</a></li>
+                        <li><a class="dropdown-item" href="#">Mag digital</a></li>
                     </ul>
                 </li>
-                <li class="nav-item navbar-title nav-underline"><a class="nav-link" href="#">Actualités</a></li>
-                <li class="nav-item navbar-title nav-underline"><a class="nav-link" href="#">Petites annonces</a></li>
-                <li class="nav-item navbar-title nav-underline"><a class="nav-link" href="#">Appels d’offres</a></li>
-                <li class="nav-item dropdown nav-underline">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        En pratique
+                <li class="nav-item dropdown nav-underline px-3 px-lg-5">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Actualités
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Adresses & sites utiles</a></li>
-                        <li><a class="dropdown-item" href="#">Réglementation</a></li>
-                        <li><a class="dropdown-item" href="#">Vocabulaire de la batellerie</a></li>
+                        <li><a class="dropdown-item" href="#">Murmures d’écluses</a></li>
+                        <li><a class="dropdown-item" href="#">Les archives</a></li>
                     </ul>
-                <li class="nav-item navbar-title nav-underline"><a class="nav-link" href="#">Fluviacarte</a></li>
+                </li>
+                <li class="nav-item dropdown nav-underline px-3 px-lg-5">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Infos pratiques
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Annuaire</a></li>
+                        <li><a class="dropdown-item" href="#">Planification</a></li>
+                        <li><a class="dropdown-item" href="#">Tutos/conseils</a></li>
+                        <li><a class="dropdown-item" href="#">Vignette VNF</a></li>
+                        <li><a class="dropdown-item" href="#">Réglementation</a></li>
+                        <li><a class="dropdown-item" href="#">Permis</a></li>
+                        <li><a class="dropdown-item" href="#">Horaire d’écluses</a></li>
+                    </ul>
+                <li class="nav-item navbar-title nav-underline px-3"><a class="nav-link" href="#">Forum</a></li>
 
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item dropdown nav-underline px-3 px-lg-5">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
                         <i class="fa-regular fa-user"></i>
                     </a>
                     <ul class="dropdown-menu">
                         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                        <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                            <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_logout') }}">Se
+                                    déconnecter</a></li>
                         {% else %}
-                        <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a></li>
-                        <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_register') }}">S'inscrire</a></li>
+                            <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_login') }}">Se
+                                    connecter</a></li>
+                            <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_register') }}">S'inscrire</a>
+                            </li>
                         {% endif %}
                     </ul>
                 </li>
