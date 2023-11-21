@@ -14,7 +14,8 @@
 .phpunit.result.cache
 ###< phpunit/phpunit ###
 
-###> symfony/phpunit-bridge ###
-.phpunit.result.cache
-/phpunit.xml
-###< symfony/phpunit-bridge ###
+/public/compte/*
+/public/pdf/*
+/public/img/cover/*
+/public/img/cover/
+/public/pdf/
