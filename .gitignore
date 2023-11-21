@@ -15,7 +15,3 @@
 ###< phpunit/phpunit ###
 
 /public/compte/*
-/public/pdf/*
-/public/img/cover/*
-/public/img/cover/
-/public/pdf/
