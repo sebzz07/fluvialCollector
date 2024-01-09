@@ -21,11 +21,19 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NFZX895G');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            let f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NFZX895G');</script>
     <!-- End Google Tag Manager -->
 
 </head>
@@ -33,12 +41,13 @@
 <body>
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe
+<noscript>
+    <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NFZX895G"
             height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
-
 {% include('navbar.html.twig') %}
 
 <!-- Page Content -->
@@ -62,7 +71,7 @@
 
     <br/>
 
-    <div class="row">
+    <div id="body" class="row">
         <div class="col-md-12">
             {% block body %}{% endblock %}
         </div>
@@ -70,17 +79,9 @@
 </div>
 <!-- /.container -->
 
-<div class="container">
 
-    <hr>
-    <footer>
-        <div class="row justify-content-end">
-            <div class="col col-lg-3">
-                <p>Copyright &copy; Fluvialnet</p>
-            </div>
-        </div>
-    </footer>
-
+<div id="footer" class="container-fluid bg-blue">
+    {% include('footer.html.twig') %}
 </div>
 <script src="{{ asset('compte/js/bootstrap.min.js') }}"></script>
 </body>

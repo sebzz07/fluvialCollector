@@ -1,38 +1,38 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-<div class="container d-flex justify-content-around">
-    <a class="navbar-brand" href="{{ asset('/') }}"><img width="256" height="45"
-                                                         src="{{ asset('compte/assets/logo_horz.png') }}"
-                                                         alt="Fluvialnet"
-                                                         class="d-inline-block align-top"/>
-    </a>
-    <form class="form-inline my-2 my-lg-0">
-        <div class="input-group">
-            <script async src="https://cse.google.com/cse.js?cx=1524ac2b8be1b4329"></script>
-            <div class="gcse-search"></div>
+    <div class="container d-flex justify-content-around">
+        <a class="navbar-brand" href="{{ asset('/') }}"><img width="256" height="45"
+                                                             src="{{ asset('compte/assets/logo_horz.png') }}"
+                                                             alt="Fluvialnet"
+                                                             class="d-inline-block align-top"/>
+        </a>
+        <form class="form-inline my-2 my-lg-0">
+            <div class="input-group">
+                <script async src="https://cse.google.com/cse.js?cx=1524ac2b8be1b4329"></script>
+                <div class="gcse-search"></div>
+            </div>
+        </form>
+        <div  class="d-flex justify-content-around" style="width: 200px;">
+            {#  <a href="{{ asset('/') }}"><img width="40" height="40"
+                                            src="{{ asset('compte/assets/cart800.png') }}"
+                                            alt="Fluvialnet"
+                                            class="d-inline-block align-top"/>
+            </a>
+            <a href="{{ asset('/') }}"><img width="40" height="40"
+                                            src="{{ asset('compte/assets/doc700.png') }}"
+                                            alt="Fluvialnet"
+                                            class="d-inline-block align-top"/>
+            </a>
+            <a href="{{ asset('/') }}"><img width="40" height="40"
+                                            src="{{ asset('compte/assets/boat800.png') }}"
+                                            alt="Fluvialnet"
+                                            class="d-inline-block align-top"/>
+            </a> #}
         </div>
-    </form>
-    <div  class="d-flex justify-content-around" style="width: 200px;">
-        <a href="{{ asset('/') }}"><img width="40" height="40"
-                                        src="{{ asset('compte/assets/cart800.png') }}"
-                                        alt="Fluvialnet"
-                                        class="d-inline-block align-top"/>
-        </a>
-        <a href="{{ asset('/') }}"><img width="40" height="40"
-                                        src="{{ asset('compte/assets/doc700.png') }}"
-                                        alt="Fluvialnet"
-                                        class="d-inline-block align-top"/>
-        </a>
-        <a href="{{ asset('/') }}"><img width="40" height="40"
-                                        src="{{ asset('compte/assets/boat800.png') }}"
-                                        alt="Fluvialnet"
-                                        class="d-inline-block align-top"/>
-        </a>
+
+
     </div>
-
-
-</div>
 </nav>
-<nav class="navbar navbar-expand-lg navbar-light bg-blue">
+<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
     <div class="container justify-content-end">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
@@ -75,10 +75,15 @@
                         <li><a class="dropdown-item" href="#">Permis</a></li>
                         <li><a class="dropdown-item" href="#">Horaire d’écluses</a></li>
                     </ul>
-                <li class="nav-item navbar-title nav-underline px-3"><a class="nav-link" href="#">Forum</a></li>
+                </li>
+                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                        <li class="nav-item navbar-title nav-underline px-3"><a class="nav-link" href="{{ path('app_logout') }}">Se
+                                    déconnecter</a>
+                        </li>
+                    {% endif %}
 
 
-                <li class="nav-item dropdown nav-underline px-3 px-lg-5">
+                {#  <li class="nav-item dropdown nav-underline px-3 px-lg-5">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         <i class="fa-regular fa-user"></i>
@@ -87,14 +92,14 @@
                         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                             <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_logout') }}">Se
                                     déconnecter</a></li>
-                        {% else %}
+                            {% else %}
                             <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_login') }}">Se
                                     connecter</a></li>
                             <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_register') }}">S'inscrire</a>
                             </li>
-                        {% endif %}
                     </ul>
-                </li>
+                        {% endif %}
+                </li>#}
             </ul>
         </div>
     </div>

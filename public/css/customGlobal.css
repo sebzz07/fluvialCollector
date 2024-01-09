@@ -16,6 +16,11 @@
     background-color: var(--main-blue-color) !important;
 }
 
+.navbar {
+    padding-top: 0.1rem !important;
+    padding-bottom: 0.1rem !important;
+}
+
 .nav-link, .dropdown-item {
     position: relative;
     width: 100%;
@@ -87,4 +92,12 @@
     background-color: var(--hovercolor);
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.5);
+}
+
+#body {
+    min-height: 70vh;
+}
+
+#footer {
+    height: 52px;
 }
