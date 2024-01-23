@@ -2,8 +2,8 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Magazine;
-use App\Entity\User;
+use App\Entity\Main\Magazine;
+use App\Entity\Main\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
