@@ -26,8 +26,8 @@ class RegistrationFormType extends AbstractType
                 'type' => PasswordType::class,
                 'invalid_message' => 'Les deux mots de passe doivent correspondre.',
                 'required' => true,
-                'first_options' => ['label' => 'Mot de passe'],
-                'second_options' => ['label' => 'Tapez le mot de passe à nouveau'],
+                'first_options' => ['label' => 'Mot de passe : '],
+                'second_options' => ['label' => 'Tapez le mot de passe à nouveau : '],
 
                 //PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -47,6 +47,7 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('agreeTerms', CheckboxType::class, [
+                'label' => 'Vous acceptez que votre mail soit utilisé uniquement par la rédaction de Fluvial pour vous informez ponctuellement',
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([

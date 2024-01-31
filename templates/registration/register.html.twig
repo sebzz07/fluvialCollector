@@ -12,14 +12,75 @@
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-    {{ form_row(registrationForm.surname) }}
-    {{ form_row(registrationForm.name) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+    <div class="form-row row p-2">
+        {{ form_label(registrationForm.email, "Votre email : ", { 'label_attr': {'class': 'align-text col-md-4 col-lg-3 col-form-label'} }) }}
+        <div class="col-md-8 col-lg-6">
+            {{ form_widget(registrationForm.email, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+        <small>{{ form_help(registrationForm.email) }}</small>
+        <div class="form-error">
+            {{ form_errors(registrationForm.email) }}
+        </div>
+    </div>
 
-        <button type="submit" class="btn">Register</button>
+    <div class="form-row row p-2">
+        {{ form_label(registrationForm.surname, "Votre prénom : ", { 'label_attr': {'class': 'align-text col-md-4 col-lg-3 col-form-label'} }) }}
+        <div class="col-md-8 col-lg-6">
+            {{ form_widget(registrationForm.surname, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+        <small>{{ form_help(registrationForm.surname) }}</small>
+        <div class="form-error">
+            {{ form_errors(registrationForm.surname) }}
+        </div>
+    </div>
+
+    <div class="form-row row p-2">
+        {{ form_label(registrationForm.name, "Votre nom : ", { 'label_attr': {'class': 'align-text col-md-4 col-lg-3 col-form-label'} }) }}
+        <div class="col-md-8 col-lg-6">
+            {{ form_widget(registrationForm.name, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+        <small>{{ form_help(registrationForm.name) }}</small>
+        <div class="form-error">
+            {{ form_errors(registrationForm.name) }}
+        </div>
+    </div>
+
+
+    <div class="form-row row p-2">
+        {{ form_label(registrationForm.plainPassword.first, "Votre mot de passe : ", { 'label_attr': {'class': 'align-text col-md-4 col-lg-3 col-form-label'} }) }}
+        <div class="col-md-8 col-lg-6">
+            {{ form_widget(registrationForm.plainPassword.first, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+        <small>{{ form_help(registrationForm.plainPassword.first) }}</small>
+        <div class="form-error">
+            {{ form_errors(registrationForm.plainPassword.first) }}
+        </div>
+    </div>
+
+    <div class="form-row row p-2">
+        {{ form_label(registrationForm.plainPassword.second, "Votre mot de passe à nouveau : ", { 'label_attr': {'class': 'align-text col-md-4 col-lg-3 col-form-label'} }) }}
+        <div class="col-md-8 col-lg-6">
+            {{ form_widget(registrationForm.plainPassword.second, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+        <small>{{ form_help(registrationForm.plainPassword.second) }}</small>
+        <div class="form-error">
+            {{ form_errors(registrationForm.plainPassword.second) }}
+        </div>
+    </div>
+
+    <div class="form-row row p-2">
+        <div class="col-1">
+            {{ form_widget(registrationForm.agreeTerms) }}
+        </div>
+        {{ form_label(registrationForm.agreeTerms, null , { 'label_attr': {'class': 'col-11 align-text'} }) }}
+
+        <small>{{ form_help(registrationForm.agreeTerms) }}</small>
+        <div class="form-error">
+            {{ form_errors(registrationForm.agreeTerms) }}
+        </div>
+    </div>
+    <div class="form-row p-2 text-center">
+        <button type="submit" class="btn btn-primary">S'inscrire</button>
+    </div>
     {{ form_end(registrationForm) }}
 {% endblock %}
