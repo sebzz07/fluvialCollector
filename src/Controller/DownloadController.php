@@ -9,10 +9,11 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
+#[Route('/compte')]
 class DownloadController extends AbstractController
 {
-    #[Route('/download/{filename}', name: 'dl_file')]
-    public function download($filename, AuthenticationUtils $authenticationUtils): Response
+    #[Route('/download/{magId}', name: 'dl_file')]
+    public function download($magId, AuthenticationUtils $authenticationUtils): Response
     {
         // Vérifiez si l'utilisateur est connecté
         if (!$this->getUser()) {
@@ -28,21 +29,20 @@ class DownloadController extends AbstractController
         }
 
         // Construisez le chemin complet vers le fichier
-        $filePath = $this->getParameter('kernel.project_dir') . '/download/pdf/' . $filename;
+        $filePath = $this->getParameter('kernel.project_dir') . '/download/pdf/fluvial' . $magId . '.pdf';
 
         // Vérifiez si le fichier existe
         if (!file_exists($filePath)) {
             throw $this->createNotFoundException("Le fichier n'existe pas.");
         }
-        var_dump($filePath);
-        die();
+
         // Lisez le contenu du fichier
         $fileContent = file_get_contents($filePath);
 
         // Créez une réponse Symfony avec le contenu du fichier
         $response = new Response($fileContent);
         $response->headers->set('Content-Type', 'application/pdf');
-        $response->headers->set('Content-Disposition', 'inline; filename="' . $filename . '"');
+        $response->headers->set('Content-Disposition', 'inline; filename="' . $magId . '"');
 
         return $response;
     }
