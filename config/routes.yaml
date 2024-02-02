@@ -8,3 +8,7 @@ app_logout:
     path: /compte/logout
     controller: App\Controller\LoginController::index
     methods: GET
+
+download_file:
+    path: /download/pdf/{filename}
+    controller: App\Controller\DownloadController::download
