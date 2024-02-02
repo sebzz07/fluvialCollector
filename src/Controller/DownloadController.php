@@ -35,7 +35,8 @@ class DownloadController extends AbstractController
         if (!file_exists($filePath)) {
             throw $this->createNotFoundException("Le fichier n'existe pas.");
         }
-
+        var_dump($filePath);
+        die();
         // Lisez le contenu du fichier
         $fileContent = file_get_contents($filePath);
 
@@ -43,7 +44,6 @@ class DownloadController extends AbstractController
         $response = new Response($fileContent);
         $response->headers->set('Content-Type', 'application/pdf');
         $response->headers->set('Content-Disposition', 'inline; filename="' . $filename . '"');
-        //return $this->file($fileContent, null, ResponseHeaderBag::DISPOSITION_INLINE);
 
         return $response;
     }
