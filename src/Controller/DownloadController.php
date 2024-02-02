@@ -9,7 +9,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-#[Route('/compte')]
+#[Route('/')]
 class DownloadController extends AbstractController
 {
     #[Route('/download/{filename}', name: 'dl_file')]
