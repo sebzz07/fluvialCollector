@@ -7,8 +7,9 @@
 
 :root {
     --main-blue-color: #4ebad6;
+    --secondary-blue-color: #6dc2d7;
     --main-black-color : #154339;
-    --hovercolor: #1e1e24;
+    --hovercolor: #0872b3;
     --bs-font-sans-serif: Arial, Helvetica, sans-serif !important;
 }
 
@@ -16,26 +17,52 @@
     background-color: var(--main-blue-color) !important;
 }
 
-.navbar {
-    padding-top: 0.1rem !important;
-    padding-bottom: 0.1rem !important;
+.nav-head {
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
 }
+
+.nav-menu {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 
 .nav-link, .dropdown-item {
     position: relative;
     width: 100%;
     display: flex;
     align-items: center;
-
+    justify-content: center;
     color: var(--bs-white) !important;
     font-size: 17px !important;
     line-height: 1.6em !important;
     font-weight: 600 !important;
 }
 
+.nav-comment {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bs-white) !important;
+    font-size: 14px !important;
+}
+
+.dropdown-menu {
+    box-shadow: rgba(149,157,165,.2) 0 8px 24px; !important;
+    padding: 15px;
+}
+
+.dropdown:hover .dropdown-menu {
+    background-color: var(--secondary-blue-color);
+}
+
 .nav-item {
     display: block !important;
     position: relative !important;
+    flex: auto !important;
 }
 
 .nav-link:hover, .dropdown-item:hover {
@@ -43,27 +70,8 @@
     background-color: inherit !important;
 }
 
-.nav-underline::after {
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    content: "";
-    bottom: 10px;
-    width: 0;
-    height: 1px;
-    transition: all .3s ease;
-    pointer-events: none;
-    background-color: var(--hovercolor)
-
-}
-.nav-underline:hover::after {
-    width: 90%;
-    left: 5%;
-}
-
 .dropdown-menu {
     background-color: var(--main-blue-color);
-
 }
 .btn-outline-info {
     color: var(--main-blue-color) !important;
@@ -100,4 +108,11 @@
 
 #footer {
     height: 52px;
+}
+
+@media (min-width: 992px) {
+    .nav-ul-flex-auto {
+        flex-direction: row;
+        flex: auto !important;
+    }
 }

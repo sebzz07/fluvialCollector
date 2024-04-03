@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container d-flex justify-content-around">
-        <a class="navbar-brand" href="{{ asset('/') }}"><img width="256" height="45"
+<nav class="navbar navbar-expand-lg navbar-light nav-head">
+    <div class="container d-flex justify-content-between">
+        <a class="navbar-brand" href="{{ asset('/') }}"><img width="200" height="60"
                                                              src="{{ asset('compte/assets/logo_horz.png') }}"
                                                              alt="Fluvialnet"
                                                              class="d-inline-block align-top"/>
@@ -12,34 +12,19 @@
             </div>
         </form>
         <div  class="d-flex justify-content-around" style="width: 200px;">
-            {#  <a href="{{ asset('/') }}"><img width="40" height="40"
-                                            src="{{ asset('compte/assets/cart800.png') }}"
-                                            alt="Fluvialnet"
-                                            class="d-inline-block align-top"/>
-            </a>
-            <a href="{{ asset('/') }}"><img width="40" height="40"
-                                            src="{{ asset('compte/assets/doc700.png') }}"
-                                            alt="Fluvialnet"
-                                            class="d-inline-block align-top"/>
-            </a>
-            <a href="{{ asset('/') }}"><img width="40" height="40"
-                                            src="{{ asset('compte/assets/boat800.png') }}"
-                                            alt="Fluvialnet"
-                                            class="d-inline-block align-top"/>
-            </a> #}
         </div>
 
 
     </div>
 </nav>
-<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+<nav class="navbar navbar-expand-lg navbar-dark bg-blue nav-menu">
     <div class="container justify-content-end">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item dropdown nav-underline px-3 px-lg-5">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-ul-flex-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item dropdown nav-underline">
                     <a class="nav-link dropdown-toggle" href="/presentation/" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         Le Mag'
@@ -50,7 +35,7 @@
                         <li><a class="dropdown-item" href="/compte/">Archives du Mag'</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown nav-underline px-3 px-lg-5">
+                <li class="nav-item dropdown nav-underline">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         Guide du marinier
@@ -62,42 +47,57 @@
                         <li><a class="dropdown-item" href="vignette-vnf/">Vignette VNF (Péage de plaisance)</a></li>
                         <li><a class="dropdown-item" href="/reglementation">Réglementation</a></li>
                         <li><a class="dropdown-item" href="/permis">Permis</a></li>
-                        <li><a class="dropdown-item" href="/">Horaire décluses</a></li>
+                        <li><a class="dropdown-item" href="/vocabulaire-marinier">Vocabulaire du marinier</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown nav-underline px-3 px-lg-5">
+                <li class="nav-item dropdown nav-underline">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         Communauté
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/forum">Forum Facebook</a></li>
-                        <li><a class="dropdown-item" href="/advert">Nos annonces</a></li>
+                        <li><a class="dropdown-item" href="https://www.facebook.com/fluvialmagazine">Forum Facebook</a></li>
+                        <li><a class="dropdown-item" href="/nos-annonces/">Nos petites annonces</a></li>
+                        <li><a class="dropdown-item" href="/submit-listing/details/">Ajouter une annonce</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown nav-underline px-3 px-lg-5">
+                <li class="nav-item dropdown nav-underline">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         Boutiques
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/forum">Boutique du marinier</a></li>
-                        <li><a class="dropdown-item" target="_blank" href="https://www.alpha-croisiere.com">Location de bateaux</a></li>
+                        <li><a class="dropdown-item" target="_blank" href="https://www.alpha-croisiere.com?a=fluvial">Alpha Croisière – Loueur Partenaire</a></li>
                     </ul>
                 </li>
-                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                        <li class="nav-item navbar-title nav-underline px-3"><a class="nav-link" href="{{ path('app_logout') }}">Se
+                <li class="nav-item dropdown nav-underline">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Voies et Bateaux
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/voies-navigables">Voies navigables</a></li>
+                        <li><a class="dropdown-item" href="/fiches-bateaux">Fiches bateaux</a></li>
+                        <li><a class="dropdown-item" href="/location-bateaux">Bases de location par région</a></li>
+                        <li><a class="dropdown-item" href="/chantier-naval">Chantier naval</a></li>
+                        <li><a class="dropdown-item" href="/accastillage">Entreprises d’accastillage</a></li>
+                    </ul>
+                </li>
+                {# {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                        <li class="nav-item navbar-title nav-underline"><a class="nav-link" href="{{ path('app_logout') }}">Se
                                     déconnecter</a>
                         </li>
                     {% endif %}
+                #}
 
-
-                {#  <li class="nav-item dropdown nav-underline px-3 px-lg-5">
+                <li class="nav-item dropdown nav-underline">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
-                        <i class="fa-regular fa-user"></i>
+                        <i class="hp-icon fas fa-sign-in-alt"></i>&nbsp Compte
                     </a>
                     <ul class="dropdown-menu">
+                        <li class="navbar-title nav-comment">Accès aux archives du mag'</li>
                         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                             <li class="navbar-title"><a class="dropdown-item" href="{{ path('app_logout') }}">Se
                                     déconnecter</a></li>
@@ -108,7 +108,7 @@
                             </li>
                     </ul>
                         {% endif %}
-                </li>#}
+                </li>
             </ul>
         </div>
     </div>
