@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Archive\Abo_User;
+use App\Entity\Archive\AboUser;
 use App\Entity\Archive\article;
 use App\Repository\Archive\Abo_UserRepository;
 use Doctrine\Persistence\ManagerRegistry;

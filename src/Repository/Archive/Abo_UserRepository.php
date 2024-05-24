@@ -2,23 +2,23 @@
 
 namespace App\Repository\Archive;
 
-use App\Entity\Archive\Abo_User;
+use App\Entity\Archive\AboUser;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Abo_User>
+ * @extends ServiceEntityRepository<AboUser>
  *
- * @method Abo_User|null find($id, $lockMode = null, $lockVersion = null)
- * @method Abo_User|null findOneBy(array $criteria, array $orderBy = null)
- * @method Abo_User[]    findAll()
- * @method Abo_User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method AboUser|null find($id, $lockMode = null, $lockVersion = null)
+ * @method AboUser|null findOneBy(array $criteria, array $orderBy = null)
+ * @method AboUser[]    findAll()
+ * @method AboUser[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class Abo_UserRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Abo_User::class);
+        parent::__construct($registry, AboUser::class);
     }
 
 //    /**

@@ -6,7 +6,7 @@ use App\Repository\Archive\Abo_UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: Abo_UserRepository::class)]
-class Abo_User
+class AboUser
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
