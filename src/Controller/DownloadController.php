@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\ResponseHeaderBag;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+
 
 #[Route('/compte')]
 class DownloadController extends AbstractController
@@ -38,11 +39,16 @@ class DownloadController extends AbstractController
 
         // Lisez le contenu du fichier
         $fileContent = file_get_contents($filePath);
+        $response = new BinaryFileResponse($filePath);
 
         // Créez une réponse Symfony avec le contenu du fichier
-        $response = new Response($fileContent);
+        //$response = new Response($fileContent);
+        $disposition = HeaderUtils::makeDisposition(
+            HeaderUtils::DISPOSITION_ATTACHMENT,
+            $magId . '.pdf'
+        );
         $response->headers->set('Content-Type', 'application/pdf');
-        $response->headers->set('Content-Disposition', 'inline; filename="' . $magId . '"');
+        $response->headers->set('Content-Disposition', $disposition);
 
         return $response;
     }
