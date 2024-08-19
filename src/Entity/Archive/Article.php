@@ -2,11 +2,11 @@
 
 namespace App\Entity\Archive;
 
-use App\Repository\Archive\articleRepository;
+use App\Repository\Archive\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: articleRepository::class)]
+#[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
 {
     #[ORM\Id]
@@ -707,5 +707,10 @@ class Article
         $this->CodeDownload = $CodeDownload;
 
         return $this;
+    }
+
+    public function getIDARTICLE(): ?string
+    {
+        return $this->IDARTICLE;
     }
 }

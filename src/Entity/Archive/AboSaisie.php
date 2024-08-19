@@ -498,4 +498,9 @@ class AboSaisie
 
         return $this;
     }
+
+    public function getCLE(): ?string
+    {
+        return $this->CLE;
+    }
 }

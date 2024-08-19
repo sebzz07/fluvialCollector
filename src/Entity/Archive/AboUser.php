@@ -114,4 +114,9 @@ class AboUser
 
         return $this;
     }
+
+    public function getAboUserId(): ?int
+    {
+        return $this->Abo_User_Id;
+    }
 }

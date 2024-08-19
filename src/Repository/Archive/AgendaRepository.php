@@ -2,27 +2,27 @@
 
 namespace App\Repository\Archive;
 
-use App\Entity\Archive\article;
+use App\Entity\Archive\Agenda;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<article>
+ * @extends ServiceEntityRepository<Agenda>
  *
- * @method article|null find($id, $lockMode = null, $lockVersion = null)
- * @method article|null findOneBy(array $criteria, array $orderBy = null)
- * @method article[]    findAll()
- * @method article[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Agenda|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Agenda|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Agenda[]    findAll()
+ * @method Agenda[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class articleRepository extends ServiceEntityRepository
+class AgendaRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, article::class);
+        parent::__construct($registry, Agenda::class);
     }
 
 //    /**
-//     * @return article[] Returns an array of article objects
+//     * @return Agenda[] Returns an array of Agenda objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -36,7 +36,7 @@ class articleRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?article
+//    public function findOneBySomeField($value): ?Agenda
 //    {
 //        return $this->createQueryBuilder('a')
 //            ->andWhere('a.exampleField = :val')
