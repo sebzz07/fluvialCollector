@@ -8,6 +8,7 @@ use App\Security\EmailVerifier;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mime\Address;
@@ -32,6 +33,15 @@ class RegistrationController extends AbstractController
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
+
+        // Anti-robots : le formulaire doit avoir été affiché dans la même session
+        // et rempli en plus de 3 secondes
+        $session = $request->getSession();
+        if (!$form->isSubmitted()) {
+            $session->set('registration_form_displayed_at', time());
+        } elseif (time() - (int) $session->get('registration_form_displayed_at', PHP_INT_MAX) < 3) {
+            $form->addError(new FormError('Inscription refusée, merci de réessayer.'));
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password

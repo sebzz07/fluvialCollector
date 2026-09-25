@@ -1,2 +1,4 @@
+# Sécurité (2026-09-25) : seul public/ (servi via /compte/) doit rester accessible.
+Require all granted
 RewriteEngine On
 RewriteRule !.(js|css|ico|gif|jpg|png|pdf)$ index.php

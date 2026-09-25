@@ -1,0 +1,2 @@
+# Sécurité (2026-09-25) : ce dossier ne doit pas être accessible depuis le web.
+Require all denied
