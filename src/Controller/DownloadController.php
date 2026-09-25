@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 #[Route('/compte')]
 class DownloadController extends AbstractController
 {
-    #[Route('/download/{magId}', name: 'dl_file')]
+    #[Route('/download/{magId}', name: 'dl_file', requirements: ['magId' => '[A-Za-z0-9_-]+'])]
     public function download($magId, AuthenticationUtils $authenticationUtils): Response
     {
         // Vérifiez si l'utilisateur est connecté
